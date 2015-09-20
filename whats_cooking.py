@@ -1,7 +1,6 @@
 import json
 import pandas as pd
 import numpy as np
-from datetime import datetime
 from sklearn.ensemble import RandomForestClassifier
 
 def getItems(recipe):
@@ -87,13 +86,14 @@ df_train_test = pd.concat([df_train,df_test])
 # Cronstruct the feature matrix containing the features of all the entries
 print("Constructing feature matrix...")
 featureMatrix = np.zeros((len(df_train_test.index),numberOfFeatures),dtype = int)
+
+# Construct a featureMatrix containing the feature info of all the entries in dataframe
 i = 0
 for index,row in df_train_test.iterrows():
     itemList = getItems(row['ingredients'])
     featureMatrix[i,:] = getFeatureArray(itemList,selectedIngredients,pd.Series(0,index = selectedIngredients))
     i += 1
-
-
+    
 # Add this feature matrix to the data frame
 i = 0
 for index in selectedIngredients:
