@@ -37,7 +37,7 @@ Once this list of ingredients is selected to act as features, assign 1 or 0 to e
               738     italian           0       1          1      0  - - -
               422        thai           1       1          1      0  - - -
               
-The cuisineId = sum(bytearray('cuisine',encoding = 'utf8') through the cuisine is identified by a numerical value. 
+The cuisineId = sum(bytearray('cuisine',encoding = 'utf8') through which the cuisine is identified by a numerical value. 
 
 ##### Random Forest Classifier
 
