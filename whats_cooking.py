@@ -118,6 +118,6 @@ for i in range(0,len(df_test.index)-1):
     cuisineOutput[i] = cuisine[output[i]]
 
 output_df = pd.DataFrame([df_test['id'],cuisineOutput], index = ['id','cuisine'])
-output_df.to_csv('sample_submission.csv',coloumns=['id','cuisine'])
+output_df.to_csv('sample_submission.csv',coloumns=['id','cuisine']) 
 
 
