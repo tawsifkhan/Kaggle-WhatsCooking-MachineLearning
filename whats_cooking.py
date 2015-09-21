@@ -37,9 +37,9 @@ def getFeatures(ingredientsDict,limits,numberOfFeatures):
     return selectedIngredients[0:numberOfFeatures]
 
 print("Loading data...")
-with open('train.json') as train_data_file:
+with open('../train.json') as train_data_file:
     train_data_json = json.load(train_data_file)
-with open('test.json') as test_data_file:
+with open('../test.json') as test_data_file:
     test_data_json = json.load(test_data_file)
  
 train_data = []
@@ -118,6 +118,6 @@ for i in range(0,len(df_test.index)-1):
     cuisineOutput[i] = cuisine[output[i]]
 
 output_df = pd.DataFrame([df_test['id'],cuisineOutput], index = ['id','cuisine'])
-output_df.to_csv('sample_submission.csv',coloumns=['id','cuisine']) 
+output_df.to_csv('../results.csv',coloumns=['id','cuisine']) 
 
 
